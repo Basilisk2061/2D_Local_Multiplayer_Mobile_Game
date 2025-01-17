@@ -5,9 +5,9 @@ const SPEED = 500.0
 const JETPACK_FORCE = -700.0
 const GRAVITY = 1000.0
 const MAX_FUEL = 100.0  # Maximum fuel capacity
-const FUEL_USAGE_RATE = 50.0  # Fuel consumed per second
-const FUEL_REGEN_RATE = 5.0  # Fuel restored per second
-const MIN_FUEL_FOR_JETPACK = 20.0  # Minimum fuel required for the jetpack to function
+const FUEL_USAGE_RATE = 30.0  # Fuel consumed per second
+const FUEL_REGEN_RATE = 10.0  # Fuel restored per second
+const MIN_FUEL_FOR_JETPACK = 10.0  # Minimum fuel required for the jetpack to function
 var current_fuel = MAX_FUEL
 
 func _physics_process(delta: float) -> void:
