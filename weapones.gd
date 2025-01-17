@@ -14,4 +14,4 @@ func shoot():
 		bullets.position = $Marker2D.global_position
 		bullets.rotation = $Marker2D.global_rotation
 		get_tree().current_scene.add_child(bullets)
-	
+	print("pew pew")
