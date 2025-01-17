@@ -12,6 +12,15 @@ var current_fuel = MAX_FUEL
 
 @onready var weapon = $Pistol  # Weapon instance
 
+func _ready():
+	print(weapon)
+	print(weapon.get_class())
+	
+	if weapon.has_method("shoot"):
+		print("have function")
+	else:
+		print("no function")
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity if no fuel in jetpack.
 	if not Input.is_action_pressed("Up") or current_fuel <= MIN_FUEL_FOR_JETPACK:
@@ -47,5 +56,5 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
-	print(current_fuel)
+
 	

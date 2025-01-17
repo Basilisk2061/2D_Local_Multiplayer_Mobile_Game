@@ -10,8 +10,12 @@ func shoot():
 	last_shot_time = Time.get_ticks_msec()
 	
 	if bullet:
+		print("Spawning bullet...")
 		var bullets = bullet.instantiate()
 		bullets.position = $Marker2D.global_position
 		bullets.rotation = $Marker2D.global_rotation
 		get_tree().current_scene.add_child(bullets)
-	print("pew pew")
+	
+	else:
+		print("no bullet scene")
+	
