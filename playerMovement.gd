@@ -10,6 +10,8 @@ const FUEL_REGEN_RATE = 10.0  # Fuel restored per second
 const MIN_FUEL_FOR_JETPACK = 10.0  # Minimum fuel required for the jetpack to function
 var current_fuel = MAX_FUEL
 
+@onready var weapon = $Pistol  # Weapon instance
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity if no fuel in jetpack.
 	if not Input.is_action_pressed("Up") or current_fuel <= MIN_FUEL_FOR_JETPACK:
@@ -37,7 +39,13 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	
+	#Handle Shooting
+	if Input.is_action_just_pressed("Shoot"):
+		if weapon:
+			weapon.shoot()
+	
 	move_and_slide()
 	
 	print(current_fuel)
+	
